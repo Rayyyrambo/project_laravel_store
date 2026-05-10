@@ -3,7 +3,13 @@
         @csrf
 
         <!-- Name -->
-        <div>
+         <div class="flex justify-center mb-4" >
+            <img  class="rounded-xl" src="{{Storage::url('images/adidas-removebg-preview.png')}}" alt="">
+         </div>
+         <div class="text-center text-white">
+            <h1 class="font-bold">Welcome</h1>
+         </div>
+        <div> 
             <x-input-label for="name" :value="__('Name')" />
             <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
             <x-input-error :messages="$errors->get('name')" class="mt-2" />
@@ -44,9 +50,10 @@
                 {{ __('Already registered?') }}
             </a>
 
-            <x-primary-button class="ms-4">
-                {{ __('Register') }}
-            </x-primary-button>
+            <button type="submit" class="login-btn font-bold bg-white text-blue-500 hover:bg-blue-500 hover:text-white py-2 px-4 rounded-md hover:shadow-[0_1px_8px_white] ml-3">
+               sign in
+            </button>
+            
         </div>
     </form>
 </x-guest-layout>

@@ -1,0 +1,482 @@
+<!-- BOOSTRAP -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Home</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <style>
+      .img-fluid-responsive {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 80vh;
+      }
+
+      @media (max-width: 1024px) {
+        .img-fluid-responsive {
+          height: 60vh;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .img-fluid-responsive {
+          height: 50vh;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .img-fluid-responsive {
+          height: 70vh;
+        }
+      }
+      @media (max-width: 1024px) {
+        h1 {
+          font-size: 50px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        h1e {
+          font-size: 40px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        h1 {
+          font-size: 30px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- NAVABR -->
+    <nav
+      class="navbar navbar-expand-lg px-3 "
+      style="
+        border-bottom: 1px solid rgb(230, 226, 226);
+        background-color: rgb(5, 5, 5);
+        
+      "
+    >
+      <div class="container-fluid">
+        <a class="navbar-brand fw-bold" href="#" style="color: white"
+          >adidas</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="#" style="color: white">Home</a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="product.html"
+                target="_blank"
+                style="color: white"
+                >Product</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                target="_blank"
+                href="about.html"
+                style="color: white"
+                >About</a
+              >
+            </li>
+            <form class="d-flex mx-2" role="search">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button class="btn btn-outline-success" type="submit">
+                Search
+              </button>
+            </form>
+          </ul>
+
+          <a href="#" class="btn btn-primary">LOGIN</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ENDNAVBAR -->
+    <!-- hero section -->
+    <section
+      class="text-center text-white d-flex align-items-end justify-content-center pb-4"
+      style="
+        background: url(&quot;image/ladnscape.jpg&quot;) center/cover no-repeat;
+        height: 80vh;
+      "
+    >
+      <div>
+        <h1 class="fw-bold" style="color: black">Discover Your Style</h1>
+        <a href="#" class="btn btn-primary btn-lg mt-3">Shop Now</a>
+      </div>
+    </section>
+    <!-- end section -->
+
+    <!-- section best sellers -->
+    <section class="py-5 mb-5">
+      <div class="container text-center">
+        <div class="container text-center">
+        <div class="row justify-content-center">
+          <div class="bg-danger" style="width: 400px; border-radius: 10px">
+            <h2 class="fw-bold text-white">Our Best Sellers</h2>
+          </div>
+        </div>
+        <div class="row mt-4 justify-content-center">
+          <!-- card baju -->
+          <div class="col-12 col-md-3 mt-4 px-4">
+            <div class="card h-100 border-1 shadow-sm">
+              <img
+                src="image/OIP.webp"
+                alt="baju"
+                class="card-img-top"
+                height="300px"
+              />
+              <div class="card-body">
+                <h5 class="card-title mb-1">Baju Kaos Hitam</h5>
+                <p class="text-muted mb-1">Baju</p>
+                <p class="fw-bold text-success">Rp.200.000</p>
+                <a
+                  href="#"
+                  class="btn btn-primary"
+                  style="box-shadow: 0px 0px 5px 2px rgb(50, 80, 250)"
+                  >buy now</a
+                >
+              </div>
+            </div>
+          </div>
+          <!-- card sepatu -->
+          <div class="col-12 col-md-3 mt-4 px-4">
+            <div class="card h-100 border-1 shadow-sm">
+              <img
+                src="image/adidasshoes.webp"
+                alt="baju"
+                class="card-img-top"
+                height="300px"
+              />
+              <div class="card-body">
+                <h5 class="card-title mb-1">Adidas Shoes</h5>
+                <p class="text-muted mb-1">sepatu</p>
+                <p class="fw-bold text-success">Rp.500.000</p>
+                <a
+                  href="#"
+                  class="btn btn-primary"
+                  style="box-shadow: 0px 0px 5px 2px rgb(50, 80, 250)"
+                  >buy now</a
+                >
+              </div>
+            </div>
+          </div>
+          <!-- card topi -->
+          <div class="col-12 col-md-3 mt-4 px-4">
+            <div class="card h-100 border-1 shadow-sm">
+              <img
+                src="image/topi.jpg"
+                alt="baju"
+                class="card-img-top"
+                height="300px"
+              />
+              <div class="card-body">
+                <h5 class="card-title mb-1">Adidas Jeans</h5>
+                <p class="text-muted mb-1">celana</p>
+                <p class="fw-bold text-success">Rp.300.000</p>
+                <a
+                  href="#"
+                  class="btn btn-primary"
+                  style="box-shadow: 0px 0px 5px 2px rgb(50, 80, 250)"
+                  >buy now</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- end section best sellers -->
+    <!-- section2 -->
+    <section
+      class="img-fluid-responsive text-white d-flex justify-content-center align-items-center text-center pt-5 p-3"
+      style="
+        background: url(&quot;image/newbrand.jpg&quot;) center/cover no-repeat;
+      "
+    >
+      <div>
+        <h1 class="fw-bold fst-italic" style="color: rgb(77, 116, 18)">
+          COMING SOON
+        </h1>
+        <h2 class="fw-bold" style="color: rgb(80, 119, 22)">NEW BRANDS</h2>
+
+        <p class="fw-bold pb-3" style="color: rgb(243, 240, 240)">
+          Step Into the Streets. Adidas bukan hanya sepatu—ini adalah identitas.
+          Dibuat untuk kamu yang berani tampil beda dan selalu selangkah di
+          depan tren Di setiap langkah, ada cerita tentang keberanian untuk
+          mengekspresikan diri tanpa batas. Dengan desain yang ikonik dan
+          sentuhan modern, Adidas menghadirkan perpaduan sempurna antara gaya
+          streetwear dan kenyamanan premium. Bukan sekadar mengikuti tren, tapi
+          menciptakan arah baru di setiap jejak yang kamu tinggalkan. Dari
+          hiruk-pikuk kota hingga sudut-sudut tersembunyi yang penuh inspirasi,
+          Adidas menjadi partner setia yang menemani setiap perjalananmu. Karena
+          di jalanan, gaya adalah bahasa—dan kamu adalah pesannya. Ini bukan
+          hanya tentang apa yang kamu pakai, tapi bagaimana kamu melangkah dan
+          menunjukkan siapa dirimu sebenarnya. Saatnya tampil berani, percaya
+          diri, dan jadilah pusat perhatian di setiap langkahmu bersama Adidas.
+        </p>
+      </div>
+    </section>
+
+    <!-- contact Start -->
+    <section id="contact">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-6 mb-5">
+            <form class="mt-5">
+              <div class="mb-3">
+                <label for="name" class="form-label fw-bold">Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="name"
+                  aria-describedby="name"
+                  style="border: 1px solid rgb(7, 7, 7)"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label fw-bold">Email</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  aria-describedby="email"
+                  style="border: 1px solid rgb(7, 7, 7)"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="Pesan" class="form-label fw-bold">Pesan</label>
+                <textarea
+                  class="form-control"
+                  id="Pesan"
+                  rows="3"
+                  style="border: 1px solid rgb(7, 7, 7)"
+                ></textarea>
+              </div>
+              <button
+                type="submit"
+                class="btn btn-primary"
+                style="box-shadow: 0px 0px 5px 0px blue"
+              >
+                Kirim
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Star End -->
+
+    <!-- New Brands Star -->
+    <section class="py-5 mb-5">
+      <div class="container text-center">
+        <div class="row justify-content-center">
+          <div class="bg-danger" style="width: 400px; border-radius: 10px">
+            <h2 class="fw-bold text-white">NEW BRANDS</h2>
+          </div>
+        </div>
+
+        <div class="row mt-4 justify-content-center">
+          <!-- card sepatu new brands-->
+          <div class="col-12 col-md-3 mt-4 px-4">
+            <div class="card h-100 border-1 shadow-sm">
+              <img
+                src="image/new1.jpg"
+                alt="baju"
+                class="card-img-top"
+                height="300px"
+                style="border-bottom: 1px solid rgb(94, 92, 92)"
+              />
+              <div class="card-body">
+                <h5 class="card-title mb-1">Adizero</h5>
+                <p class="text-muted mb-1">sepatu</p>
+                <p class="fw-bold text-success">Rp.200.000</p>
+                <a
+                  href="#"
+                  class="btn btn-primary"
+                  style="box-shadow: 0px 0px 5px 2px rgb(50, 80, 250)"
+                  >buy now</a
+                >
+              </div>
+            </div>
+          </div>
+          <!-- card sepatu -->
+          <div class="col-12 col-md-3 mt-4 px-4">
+            <div class="card h-100 border-1 shadow-sm">
+              <img
+                src="image/new2.jpg"
+                alt="baju"
+                class="card-img-top"
+                height="300px"
+                style="border-bottom: 1px solid rgb(5, 5, 5)"
+              />
+              <div class="card-body">
+                <h5 class="card-title mb-1">Elastics</h5>
+                <p class="text-muted mb-1">sepatu</p>
+                <p class="fw-bold text-success">Rp.500.000</p>
+                <a
+                  href="#"
+                  class="btn btn-primary"
+                  style="box-shadow: 0px 0px 5px 2px rgb(50, 80, 250)"
+                  >buy now</a
+                >
+              </div>
+            </div>
+          </div>
+          <!-- card topi -->
+          <div class="col-12 col-md-3 mt-4 px-4">
+            <div class="card h-100 border-1 shadow-sm">
+              <img
+                src="image/new4.jpg"
+                alt="baju"
+                class="card-img-top"
+                height="300px"
+                style="border-bottom: 1px solid rgb(94, 92, 92)"
+              />
+              <div class="card-body">
+                <h5 class="card-title mb-1">trewhite</h5>
+                <p class="text-muted mb-1">Baju</p>
+                <p class="fw-bold text-success">Rp.300.000</p>
+                <a
+                  href="#"
+                  class="btn btn-primary"
+                  style="box-shadow: 0px 0px 5px 2px rgb(50, 80, 250)"
+                  >buy now</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- BARIS KE 2 -->
+         <div class="row mt-4 justify-content-center">
+          <!-- card baju -->
+          <div class="col-12 col-md-3 mt-4 px-4">
+            <div class="card h-100 border-1 shadow-sm " >
+              <img
+                src="image/new5.jpg"
+                alt="baju"
+                class="card-img-top"
+                height="300px"
+                style="border-bottom: 1px solid rgb(94, 92, 92)"
+              />
+              <div class="card-body bg-danger">
+                <div class="row justify-content-center px-4">
+                  <div style="background-color: red; width: 300px; justify-content: center; display: flex; border-radius: 10px; border: 1px solid white;">
+                  <h5 class="card-title mb-1">SPECIAL BRANDS</h5>
+                </div>
+                </div>
+                
+                <h5 class="card-title mb-1">PSM Makassar</h5>
+                <p class="text-muted mb-1">Baju</p>
+                <p class="fw-bold text-success">Rp.1000.000</p>
+                <a
+                  href="#"
+                  class="btn btn-primary"
+                  style="box-shadow: 0px 0px 5px 2px rgb(50, 80, 250)"
+                  >buy now</a
+                >
+              </div>
+            </div>
+          </div>
+          <!-- card sepatu -->
+          <div class="col-12 col-md-3 mt-4 px-4">
+            <div class="card h-100 border-1 shadow-sm">
+              <img
+                src="image/new6.webp"
+                alt="baju"
+                class="card-img-top"
+                height="300px"
+                style="border-bottom: 1px solid rgb(5, 5, 5)"
+              />
+              <div class="card-body">
+                <h5 class="card-title mb-1">blacksnack</h5>
+                <p class="text-muted mb-1">sneakers</p>
+                <p class="fw-bold text-success">Rp.500.000</p>
+                <a
+                  href="#"
+                  class="btn btn-primary"
+                  style="box-shadow: 0px 0px 5px 2px rgb(50, 80, 250)"
+                  >buy now</a
+                >
+              </div>
+            </div>
+          </div>
+          <!-- card topi -->
+          <div class="col-12 col-md-3 mt-4 px-4">
+            <div class="card h-100 border-1 shadow-sm">
+              <img
+                src="image/new3.webp"
+                alt="baju"
+                class="card-img-top"
+                height="300px"
+                style="border-bottom: 1px solid rgb(94, 92, 92)"
+              />
+              <div class="card-body">
+                <h5 class="card-title mb-1">Bathingape</h5>
+                <p class="text-muted mb-1">sneakers</p>
+                <p class="fw-bold text-success">Rp.300.000</p>
+                <a
+                  href="#"
+                  class="btn btn-primary"
+                  style="box-shadow: 0px 0px 5px 2px rgb(50, 80, 250)"
+                  >buy now</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- New Brands End -->
+
+    <footer class="text-white text-center py-3" style="background-color: black">
+      <div
+        class="container justify-content-center d-flex flex-column align-items-center p-2"
+      >
+        <h2>ADIDAS-STORE</h2>
+        <p class="fw-bold">&copy; 2026 ADIDAS-STORE All rights reserved</p>
+        <img
+          src="image/adidas.png"
+          alt=""
+          style="height: 90px; object-fit: cover"
+        />
+      </div>
+    </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
