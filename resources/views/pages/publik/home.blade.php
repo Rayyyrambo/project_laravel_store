@@ -30,29 +30,44 @@
             </div>
             <div class="row mt-4 justify-content-center">
             <!-- card baju -->
+            @forelse ($products as $item) 
             <div class="col-12 col-md-3 mt-4 px-4">
                 <div class="card h-100 border-1 shadow-sm">
-                <img
-                    src="{{ asset('image/OIP.webp') }}"
-                    alt="baju"
-                    class="card-img-top"
-                    height="300px"
-                />
-                <div class="card-body">
-                    <h5 class="card-title mb-1">Baju Kaos Hitam</h5>
-                    <p class="text-muted mb-1">Baju</p>
-                    <p class="fw-bold text-success">Rp.200.000</p>
-                    <a
-                    href="#"
-                    class="btn btn-primary"
-                    style="box-shadow: 0px 0px 5px 2px rgb(50, 80, 250)"
-                    >buy now</a
-                    >
+                    @if (!$item->image)
+                        <img
+                            src="{{ asset('image/no-image.png') }}"
+                            alt="{{ $item->name }}"
+                            class="card-img-top"
+                            height="300px"
+                        />          
+                    @else        
+                        <img
+                            src="{{ Storage::url('products/'. $item->image) }}"
+                            alt="{{ $item->name }}"
+                            class="card-img-top"
+                            height="300px"
+                        />
+                    @endif
+                    <div class="card-body">
+                        <h5 class="card-title mb-1">{{ $item->name }}</h5>
+                        <p class="text-muted mb-1">{{ $item->category->name }}</p>
+                        <p class="fw-bold text-success">{{ number_format($item->price, 0, ',' ,'.') }}</p>
+                        <a
+                        href="https://api.whatsapp.com/send?phone=6282194809529&text=Halo%20Admin%20Saya%20ingin%20membeli%20produk%20{{ $item->name }}"
+                        class="btn btn-primary" target="_blank"
+                        style="box-shadow: 0px 0px 5px 2px rgb(50, 80, 250)"
+                        >buy now</a
+                        >
+                    </div>
                 </div>
-                </div>
-            </div>
+            </div>       
+            @empty
+                <div class="col-12">
+                    <p class="text-center">tidak ada produk tersedia</p>
+                </div>    
+            @endforelse
             <!-- card sepatu -->
-            <div class="col-12 col-md-3 mt-4 px-4">
+            {{-- <div class="col-12 col-md-3 mt-4 px-4">
                 <div class="card h-100 border-1 shadow-sm">
                 <img
                     src="{{ asset('image/adidasshoes.webp') }}"
@@ -72,9 +87,9 @@
                     >
                 </div>
                 </div>
-            </div>
+            </div> --}}
             <!-- card topi -->
-            <div class="col-12 col-md-3 mt-4 px-4">
+            {{-- <div class="col-12 col-md-3 mt-4 px-4">
                 <div class="card h-100 border-1 shadow-sm">
                 <img
                     src="{{ asset('image/topi.jpg') }}"
@@ -94,7 +109,7 @@
                     >
                 </div>
                 </div>
-            </div>
+            </div> --}}
             </div>
         </div>
         </section>

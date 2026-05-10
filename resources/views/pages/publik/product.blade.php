@@ -10,101 +10,106 @@
         </div>
         <!-- baju -->
         <div class="row mt- pt-5 " >
+            @forelse ($products as $item)
+                <div class="col-md-4 justify-content-center d-flex mb-4">
+                    <div
+                        class="card"
+                        style="
+                        background-size: cover;
+                        overflow: hidden;
+                        border-bottom-left-radius: 40px;
+                        border-bottom-right-radius: 40px;
+                        border-top-right-radius: 40px;
+                        border-top-left-radius: 40px;
+                        width: 300px; border: 2px solid black;
+                        "
+                    >
+                        <img
+                        src="{{ Storage::url('products/'. $item->image) }}"
+                        alt="{{ $item->name }}"
+                        style="width: 100%; height: 300px; object-fit: cover;"
+                        />
+                        <div class="card-body bg-dark">
+                        <h5 class="card-title mb-1 text-white">{{ $item->name }}</h5>
+                        <p class="mb-1 text-white">{{ $item->category->name }}</p>
+                        <p class="fw-bold text-success">{{ number_format($item->price, 0, ',' ,'.') }}</p>
+                        <a
+                            href="https://api.whatsapp.com/send?phone=6282194809529&text=Halo%20Admin%20Saya%20ingin%20membeli%20produk%20{{ $item->name }}"
+                            class="btn btn-primary"
+                            style="box-shadow: 0px 0px 5px 2px rgb(50, 80, 250)"
+                            >buy now</a
+                        >
+                        </div>
+                    </div>
+            </div>
+            @empty
+                
+            @endforelse
+            
+            {{-- <div class="col-md-4 justify-content-center d-flex mb-4">
+                    <div
+                        class="card"
+                        style="
+                        background-size: cover;
+                        overflow: hidden;
+                        border-bottom-left-radius: 40px;
+                        border-bottom-right-radius: 40px;
+                        border-top-right-radius: 40px;
+                        border-top-left-radius: 40px;
+                        width: 300px; border: 2px solid black;
+                        "
+                    >
+                        <img
+                        src="{{ asset('image/baju2.jpg') }}"
+                        alt=""
+                        style="width: 100%; height: 300px; object-fit: cover;"
+                        />
+                        <div class="card-body bg-dark">
+                        <h5 class="card-title mb-1 text-white">BLACK WHITE</h5>
+                        <p class="mb-1 text-white">Baju</p>
+                        <p class="fw-bold text-success">Rp.700.000</p>
+                        <a
+                            href="#"
+                            class="btn btn-primary"
+                            style="box-shadow: 0px 0px 5px 2px rgb(50, 80, 250)"
+                            >buy now</a
+                        >
+                        </div>
+                    </div>
+            </div>
             <div class="col-md-4 justify-content-center d-flex mb-4">
-            <div
-                class="card"
-                style="
-                background-size: cover;
-                overflow: hidden;
-                border-bottom-left-radius: 40px;
-                border-bottom-right-radius: 40px;
-                border-top-right-radius: 40px;
-                border-top-left-radius: 40px;
-                width: 300px; border: 2px solid black;
-                "
-            >
-                <img
-                src="{{ asset('image/bajuadidas.jpg') }}"
-                alt=""
-                style="width: 100%; height: 300px; object-fit: cover;"
-                />
-                <div class="card-body bg-dark">
-                <h5 class="card-title mb-1 text-white">BEACH</h5>
-                <p class="mb-1 text-white">Baju</p>
-                <p class="fw-bold text-success">Rp.800.000</p>
-                <a
-                    href="#"
-                    class="btn btn-primary"
-                    style="box-shadow: 0px 0px 5px 2px rgb(50, 80, 250)"
-                    >buy now</a
+                <div
+                    class="card"
+                    style="
+                    background-size: cover;
+                    overflow: hidden;
+                    border-bottom-left-radius: 40px;
+                    border-bottom-right-radius: 40px;
+                    border-top-right-radius: 40px;
+                    border-top-left-radius: 40px;
+                    width: 300px; border: 2px solid black;
+                    "
                 >
+                    <img
+                    src="{{ asset('image/baju 3.jpg') }}"
+                    alt=""
+                    style="width: 100%; height: 300px; object-fit: cover;"
+                    />
+                    <div class="card-body bg-dark">
+                    <h5 class="card-title mb-1 text-white">ARMY</h5>
+                    <p class="mb-1 text-white">Baju</p>
+                    <p class="fw-bold text-success">Rp.500.000</p>
+                    <a
+                        href="#"
+                        class="btn btn-primary"
+                        style="box-shadow: 0px 0px 5px 2px rgb(50, 80, 250)"
+                        >buy now</a
+                    >
+                    </div>
                 </div>
-            </div>
-            </div>
-            <div class="col-md-4 justify-content-center d-flex mb-4">
-            <div
-                class="card"
-                style="
-                background-size: cover;
-                overflow: hidden;
-                border-bottom-left-radius: 40px;
-                border-bottom-right-radius: 40px;
-                border-top-right-radius: 40px;
-                border-top-left-radius: 40px;
-                width: 300px; border: 2px solid black;
-                "
-            >
-                <img
-                src="{{ asset('image/baju2.jpg') }}"
-                alt=""
-                style="width: 100%; height: 300px; object-fit: cover;"
-                />
-                <div class="card-body bg-dark">
-                <h5 class="card-title mb-1 text-white">BLACK WHITE</h5>
-                <p class="mb-1 text-white">Baju</p>
-                <p class="fw-bold text-success">Rp.700.000</p>
-                <a
-                    href="#"
-                    class="btn btn-primary"
-                    style="box-shadow: 0px 0px 5px 2px rgb(50, 80, 250)"
-                    >buy now</a
-                >
                 </div>
-            </div>
-            </div>
-            <div class="col-md-4 justify-content-center d-flex mb-4">
-            <div
-                class="card"
-                style="
-                background-size: cover;
-                overflow: hidden;
-                border-bottom-left-radius: 40px;
-                border-bottom-right-radius: 40px;
-                border-top-right-radius: 40px;
-                border-top-left-radius: 40px;
-                width: 300px; border: 2px solid black;
-                "
-            >
-                <img
-                src="{{ asset('image/baju 3.jpg') }}"
-                alt=""
-                style="width: 100%; height: 300px; object-fit: cover;"
-                />
-                <div class="card-body bg-dark">
-                <h5 class="card-title mb-1 text-white">ARMY</h5>
-                <p class="mb-1 text-white">Baju</p>
-                <p class="fw-bold text-success">Rp.500.000</p>
-                <a
-                    href="#"
-                    class="btn btn-primary"
-                    style="box-shadow: 0px 0px 5px 2px rgb(50, 80, 250)"
-                    >buy now</a
-                >
-                </div>
-            </div>
-            </div>
-            <
-        </div>
+                <
+            </div> --}}
         </div>
         
         <!--  celana  -->
