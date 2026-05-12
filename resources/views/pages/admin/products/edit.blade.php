@@ -53,7 +53,7 @@
                                 @endif
                             </div>
                             <label>Gambar</label>
-                            <input type="file" name="image" class="form-control" placeholder="Masukkan gambar" required>
+                            <input type="file" name="image" class="form-control" placeholder="Masukkan gambar" >
                         </div>
                         <div class="form-group">
                             <label>Deskripsi</label>

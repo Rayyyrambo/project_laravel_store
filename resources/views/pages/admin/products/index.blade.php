@@ -9,9 +9,18 @@
         </div>
         <div class="row">
             <div class="col-md-12">
-                <div class="card card-header">
+                <div class="card card-header ">
                     Produk
                 </div>
+                @if (session('success'))
+                    <div class="row mt-3">
+                        <div class="col-md-12">
+                            <div class="alert alert-success">
+                                {{ session('success') }}
+                            </div>
+                        </div>
+                    </div>
+                @endif
                 <div class="card-body">
                     <table class="table table-bordered table-hover">
                         <thead>

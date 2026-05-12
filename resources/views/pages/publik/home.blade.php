@@ -30,13 +30,13 @@
             </div>
             <div class="row mt-4 justify-content-center">
             <!-- card baju -->
-            @forelse ($products as $item) 
+            @forelse ($bestSellers as $item) 
             <div class="col-12 col-md-3 mt-4 px-4">
                 <div class="card h-100 border-1 shadow-sm">
                     @if (!$item->image)
                         <img
                             src="{{ asset('image/no-image.png') }}"
-                            alt="{{ $item->name }}"
+                            alt="{{ $item->name}}"
                             class="card-img-top"
                             height="300px"
                         />          
@@ -148,6 +148,26 @@
 
         <!-- contact Start -->
         <section class="pt-5" id="contact">
+            {{-- alert success --}}
+        {{-- @if (session('success'))
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="alert alert-success">
+                        {{ session('success') }}
+                    </div>
+                </div>
+            </div>
+        @endif --}}
+        {{-- alert error --}}
+        {{-- @if (session('error'))
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="alert alert-danger">
+                        {{ session('error') }}
+                    </div>
+                </div>
+            </div>
+        @endif --}}
         <div class="container pt-3  rounded-3 custom-gradient shadow-lg bg-body rounded">
             <style>
                 .custom-gradient{
@@ -156,32 +176,41 @@
             </style>
             <div class="row justify-content-center">
                 <div class="col-md-6 mb-5 ">
-                    <form class="mt-5 ">
+                    <form class="mt-5 " action="{{ route('admin.massagees.store')}}" method="POST">
+                        @csrf
                         <div class="mb-3">
                             <label for="name" class="form-label fw-bold">Name</label>
                             <input
+                            name="name"
                             type="text"
+                            required
                             class="form-control"
                             id="name"
                             aria-describedby="name"
+                            placeholder="Silahkan isi nama anda"
                             style="border: 1px solid rgb(7, 7, 7)"
                             />
                         </div>
                         <div class="mb-3">
                             <label for="email" class="form-label fw-bold">Email</label>
                             <input
+                            name="email"
                             type="email"
+                            required
                             class="form-control"
                             id="email"
                             aria-describedby="email"
+                            placeholder="Silahkan isi email anda"
                             style="border: 1px solid rgb(7, 7, 7)"
                             />
                         </div>
                         <div class="mb-3">
                             <label for="Pesan" class="form-label fw-bold">Pesan</label>
                             <textarea
+                            name="pesan"
                             class="form-control"
-                            id="Pesan"
+                            id=""
+                            required
                             rows="3"
                             style="border: 1px solid rgb(7, 7, 7)"
                             ></textarea>
@@ -210,31 +239,50 @@
             </div>
 
             <div class="row mt-4 justify-content-center">
-            <!-- card sepatu new brands-->
-            <div class="col-12 col-md-3 mt-4 px-4">
+            <!-- card new brands-->
+            @forelse ($newBrands as $item )
+             <div class="col-12 col-md-3 mt-4 px-4">
                 <div class="card h-100 border-1 shadow-sm">
-                <img
-                    src="image/new1.jpg"
-                    alt="baju"
-                    class="card-img-top"
-                    height="300px"
-                    style="border-bottom: 1px solid rgb(94, 92, 92)"
-                />
-                <div class="card-body">
-                    <h5 class="card-title mb-1">Adizero</h5>
-                    <p class="text-muted mb-1">sepatu</p>
-                    <p class="fw-bold text-success">Rp.200.000</p>
-                    <a
-                    href="#"
-                    class="btn btn-primary"
-                    style="box-shadow: 0px 0px 5px 2px rgb(50, 80, 250)"
-                    >buy now</a
-                    >
-                </div>
+                    @if (!$item->image)
+                        <img
+                        src="{{ asset('image/no-image.png') }}"
+                        alt="{{ $item->$name }}"
+                        class="card-img-top"
+                        height="300px"
+                        style="border-bottom: 1px solid rgb(94, 92, 92)"
+                    />
+                    @else
+                        <img
+                        src="{{ Storage::url('products/'. $item->image) }}"
+                        alt="{{ $item->name }}"
+                        class="card-img-top"
+                        height="300px"
+                        style="border-bottom: 1px solid rgb(94, 92, 92)"
+                    />
+                    @endif
+                    <div class="card-body">
+                        <h5 class="card-title mb-1">{{ $item->name }}</h5>
+                        <p class="text-muted mb-1">{{ $item->category->name }}</p>
+                        @if ($item->description)
+                        <p class="bg-danger rounded-pill text-white">{{ $item->description }}</p>
+                        @endif
+                        <p class="fw-bold text-success">{{number_format($item->price, 0, ',' ,'.')  }}</p>
+                        <a
+                        href="#"
+                        class="btn btn-primary"
+                        style="box-shadow: 0px 0px 5px 2px rgb(50, 80, 250)"
+                        >buy now</a
+                        >
+                    </div>
                 </div>
             </div>
+                
+            @empty
+                
+            @endforelse
+           
             <!-- card sepatu -->
-            <div class="col-12 col-md-3 mt-4 px-4">
+            {{-- <div class="col-12 col-md-3 mt-4 px-4">
                 <div class="card h-100 border-1 shadow-sm">
                 <img
                     src="image/new2.jpg"
@@ -255,9 +303,9 @@
                     >
                 </div>
                 </div>
-            </div>
+            </div> --}}
             <!-- card topi -->
-            <div class="col-12 col-md-3 mt-4 px-4">
+            {{-- <div class="col-12 col-md-3 mt-4 px-4">
                 <div class="card h-100 border-1 shadow-sm">
                 <img
                     src="image/new4.jpg"
@@ -278,12 +326,12 @@
                     >
                 </div>
                 </div>
-            </div>
+            </div> --}}
             </div>
             <!-- BARIS KE 2 -->
             <div class="row mt-4 justify-content-center">
             <!-- card baju -->
-            <div class="col-12 col-md-3 mt-4 px-4">
+            {{-- <div class="col-12 col-md-3 mt-4 px-4">
                 <div class="card h-100 border-1 shadow-sm " >
                 <img
                     src="image/new5.jpg"
@@ -356,7 +404,7 @@
                     >
                 </div>
                 </div>
-            </div>
+            </div> --}}
             </div>
         </div>
         </section>

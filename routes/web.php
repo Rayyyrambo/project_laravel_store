@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\karyawanController;
 use App\Http\Controllers\Admin\ProductsController as AdminProductsController;
+use App\Http\Controllers\Admin\MassageController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\AboutController;
@@ -15,6 +16,7 @@ Route::get('/product',[ProductController::class, 'index'])->name('product');
 Route::get('/about',[AboutController::class, 'index'])->name('about');
 
 Route::prefix('administrator')->middleware(['auth', 'verified'])->name('admin.')->group(function(){
+    Route::resource('massagees', MassageController::class );
     Route::resource('categories', CategoriController::class);
     Route::resource('products', AdminProductsController ::class);
     Route::get('karyawan', [karyawanController::class, 'index'])->name('karyawan');

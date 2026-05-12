@@ -8,14 +8,11 @@
         </div>
     </div>
     {{-- alert succes --}}
-    {{-- @if (session('success'))
-        <div class="row">
-            <div class="col-md-12">
-                <div class=""></div>
-            </div>
-        </div>
-        
-    @endif --}}
+    @if ('success')
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div> 
+    @endif
     {{-- alert error --}}
     @if (session('error'))
         <div class="alert alert-danger">
