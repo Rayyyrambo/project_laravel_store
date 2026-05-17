@@ -58,7 +58,7 @@
                     
                     <div class="footer-links mt-4">
                         <a href="#">Lupa password?</a>
-                        <span>Belum punya akun? <a href="#">Daftar</a></span>
+                        <span>Belum punya akun? <a href="{{ route('register') }}">Daftar</a></span>
                     </div>
                     </form>
                 </div>

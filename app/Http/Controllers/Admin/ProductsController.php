@@ -10,10 +10,25 @@ class ProductsController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $products = Product::latest('created_at')->get();
-        return view('pages.admin.products.index', compact('products'));
+        $search = $request->input('search');
+        $categoryFilter = $request->input('category_id');
+        $golongan = Category::all();
+        
+        if ($categoryFilter) {
+            $products = Product::where('category_id', $categoryFilter)
+                               ->latest('created_at')
+                               ->get();
+        }elseif($search){
+             $products = Product::where('name', 'like', '%' . $search . '%')
+                               ->latest('created_at')
+                               ->get();
+        } else {
+            $products = Product::latest('created_at')->get();
+        }
+        
+        return view('pages.admin.products.index', compact('products', 'search', 'golongan', 'categoryFilter'));
     }
 
     /**

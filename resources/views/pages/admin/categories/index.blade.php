@@ -3,10 +3,28 @@
 @section('content')
     <div class="container">
         <div class="row">
+            <div class="col-md-12 d-flex justify-content-between align-items-center mb-3">
+                <form action="{{ route('admin.categories.index') }}" method="get" class="d-flex gap-2 flex-grow-1 mx-3">
+                    <input type="text" name="search" class="form-control" placeholder="Cari nama kategori..." value="{{ $search ?? '' }}">
+                    <select name="category_id" id="categoryFilter" class="rounded-pill text-center mx-2 bg-primary text-white" style="min-width: 200px;">
+                        <option value="" class="text-center text-white">Pilih Kategori</option>
+                        @foreach ($golongan as $item)
+                             <option class="text-white" value="{{ $item->id }}" @if($categoryFilter == $item->id) selected @endif>{{ $item->name }}</option>
+                        @endforeach
+                    </select>
+                    <button type="submit" class="btn btn-primary mx-2">Cari</button>
+                    @if ($search || $categoryFilter)
+                        <a href="{{ route('admin.categories.index') }}" class="btn btn-secondary">Reset</a>
+                    @endif
+                </form>
+                <a href="{{ route('admin.categories.create') }}" class="btn btn-success ms-2">Tambah Data</a>
+            </div>
+        </div>
+        {{-- <div class="row">
             <div class="col-md-12 d-flex justify-content-end">
                 <a href="{{ route('admin.categories.create') }}" class="btn btn-success mb-3">Tambah Data</a>
             </div>
-        </div>
+        </div> --}}
         {{-- aller success --}}
         @if (session('success'))
             <div class="row">

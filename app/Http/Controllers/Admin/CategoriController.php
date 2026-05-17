@@ -11,10 +11,21 @@ class CategoriController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(request $request)
     {
-        $categories = Category::latest('created_at')->get();
-        return view('pages.admin.categories.index', compact('categories'));
+        $search = $request->input('search');
+        $categoryFilter = $request->input('category_id');
+        $golongan = Category::all();
+        
+        if($categoryFilter){
+            $categories = Category::where('id', $categoryFilter)->latest()->get();
+        } elseif($search){
+            $categories = Category::where('name', 'like', '%' .$search. '%')->latest()->get();
+        } else {
+            $categories = Category::latest('created_at')->get();
+        }
+         
+        return view('pages.admin.categories.index', compact('categories', 'search', 'categoryFilter', 'golongan'));
     }
 
     /**
